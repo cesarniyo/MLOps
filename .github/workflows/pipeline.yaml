@@ -83,17 +83,14 @@ jobs:
       - name: Pull latest images
         run: |
          docker pull ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest         
-        # docker pull 927765266034.dkr.ecr.us-east-2.amazonaws.com/mlops:latest
 
-      # - name: Stop and remove container if running
-      #   run: |
-      #    docker ps -q --filter "name=mlproj" | grep -q . && docker stop mlproj && docker rm -fv mlproj
+      - name: Stop and remove container if running
+        run: |
+         docker ps -q --filter "name=mlops" | grep -q . && docker stop mlops && docker rm -fv mlops
 
        
       - name: Run Docker Image to serve users
         run: |
          docker run -d -p 8080:8080 --name=mlops -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  ${{secrets.AWS_ECR_LOGIN_URI}}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
-        #  docker run -d -p 8080:8080 --name=mlops -e 'AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}' -e 'AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}' -e 'AWS_REGION=${{ secrets.AWS_REGION }}'  927765266034.dkr.ecr.us-east-2.amazonaws.com/mlops:latest
       - name: Clean previous images and containers
         run: |
-#    

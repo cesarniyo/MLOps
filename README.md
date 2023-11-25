@@ -167,12 +167,9 @@ export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
 # 9. Push to git  
   
 
-## About MLflow 
-MLflow
-
- - Its Production Grade
- - Trace all of your expriements
- - Logging & tagging your model
+# docker help tools:
+docker rm -f $(docker ps -a -q)
+docker rmi $(docker images -q)
 
     
 ================================================================================================================================================     
