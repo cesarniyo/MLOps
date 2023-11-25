@@ -204,3 +204,7 @@ REFERENCE
 ==========
 ### MLOps --- MLFlow : https://www.youtube.com/watch?v=pxk1Fr33-L4
 ### Dashub           : https://www.youtube.com/watch?v=qdcHHrsXA48
+
+
+
+Tech AI is a technology company that specializes in delivering advanced products and AI-powered open source and cloud solutions.

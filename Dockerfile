@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 #CMD ["python3", "app.py"]
 
-CMD ["streamlit", "run", "pipeline_inference.py"]
+CMD ["streamlit", "run", "pipeline_inference.py", "--server.port", "8080"]
