@@ -114,6 +114,7 @@ export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
 
 	
 ## 3. Create ECR repo to store/save docker image
+    - Go to ECR and then Repositories to create one and the the URI for the created repository
     - Save the URI: 927765266034.dkr.ecr.us-east-2.amazonaws.com/mlops
 
 	
@@ -124,6 +125,8 @@ export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
 	2. Push your docker image to ECR
 
 	3. Launch Your EC2 
+
+	4. Click connect to get the CLI interface
 
 ## 5. Open EC2 and Install docker in EC2 Machine:
 	
