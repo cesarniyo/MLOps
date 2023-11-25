@@ -145,10 +145,13 @@ export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
 	newgrp docker
 	
 # 6. Configure EC2 as self-hosted runner:
-    Github project=>setting=>actions=>runner=>new self hosted runner=> choose os=> then run command one by one on the EC2 created
+    Go to github project=>setting=>actions=>runner=>new self hosted runner=> choose os=> then run command one by one on the EC2 created
+	Note: if the runner is offline you might need to restart the whole process
 
+# 7. Configure EC2 port 
+    Go to EC2 ==> Security ==> security group ===> edit inbound ==> add custom TCP and specify the port 8080 - accept traffic from 0.0.0.0
 
-# 7. Setup github secrets:
+# 8. Setup github secrets:
 
     AWS_ACCESS_KEY_ID= 
 
@@ -161,7 +164,8 @@ export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
     ECR_REPOSITORY_NAME = simple-app
 
 
-
+# 9. Push to git  
+  
 
 ## About MLflow 
 MLflow
